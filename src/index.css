@@ -1,0 +1,109 @@
+:root {
+    --ration: 1.618;
+
+    --spacer: 0.5rem;
+    --spacer-2: calc(var(--spacer) * var(--ration));
+    --spacer-4: calc(var(--spacer-2) * var(--ration));
+
+    --radius: 0.5rem;
+    --radius-sm: calc(var(--radius) / 2);
+
+    --background: black;
+    --foreground: whitesmoke;
+}
+
+*,
+*:after,
+*:before {
+    padding: 0;
+    margin: 0;
+    font-family: system-ui;
+    font-size: 100%;
+    box-sizing: border-box;
+    transition: 0.3s ease-in;
+}
+
+h1 {
+    font-weight: 500;
+}
+
+body {
+    background: whitesmoke;
+}
+
+.dashboard {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    padding: var(--spacer);
+}
+
+.dashboard .container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacer-4);
+
+    max-width: 512px;
+    width: 100%;
+    padding: var(--spacer-4);
+    margin: 0 auto;
+    height: auto;
+
+    box-shadow: 0px 0px 35rem lightgrey;
+    border-radius: var(--spacer-4);
+}
+
+.input__group {
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    gap: var(--spacer);
+}
+
+.input__group input {
+    width: 100%;
+    padding: var(--spacer-2);
+    background-color: transparent;
+    border-radius: var(--radius) 4px 4px var(--radius);
+
+    border: 1px solid lightgrey;
+    outline: none;
+}
+
+.input__group .group__item {
+    padding: var(--spacer);
+    border-radius: 4px var(--spacer) var(--spacer) 4px;
+
+    font-weight: 600;
+    background-color: transparent;
+
+    border: 1px solid lightgrey;
+    outline: none;
+}
+
+.info__bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info__bar .balance {
+    font-size: 150%;
+}
+
+.info__bar button {
+    min-width: 100px;
+    padding: var(--spacer-2);
+    border-radius: var(--radius);
+    border: none;
+    font-size: 100%;
+    font-weight: bold;
+
+    background-color: var(--background);
+    color: var(--foreground);
+}
