@@ -1,4 +1,4 @@
-function App() {
+        if (walletBalance) {
     return (
         <div className="dashboard">
             <div className="container">
