@@ -1,4 +1,5 @@
 :root {
+    --font-base: 16px;
     --ration: 1.618;
 
     --spacer: 0.5rem;
@@ -7,6 +8,8 @@
 
     --radius: 0.5rem;
     --radius-sm: calc(var(--radius) / 2);
+
+    --font-xs: calc(var(--font-base) / var(--ration));
 
     --background: black;
     --foreground: whitesmoke;
@@ -41,6 +44,7 @@ body {
     right: 0;
 
     padding: var(--spacer);
+    overflow: auto;
 }
 
 .dashboard .container {
@@ -48,6 +52,7 @@ body {
     flex-direction: column;
     gap: var(--spacer-4);
 
+    min-width: 300px;
     max-width: 512px;
     width: 100%;
     padding: var(--spacer-4);
@@ -61,6 +66,7 @@ body {
 .input__group {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     overflow: hidden;
     gap: var(--spacer);
 }
@@ -79,7 +85,8 @@ body {
     padding: var(--spacer);
     border-radius: 4px var(--spacer) var(--spacer) 4px;
 
-    font-weight: 600;
+    font-weight: 900;
+    font-size: var(--font-xs);
     background-color: transparent;
 
     border: 1px solid lightgrey;
@@ -93,7 +100,17 @@ body {
 }
 
 .info__bar .balance {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2px;
     font-size: 150%;
+}
+
+.info__bar .balance > span:last-child {
+    font-size: calc(var(--font-base) - 4px);
+    font-style: italic;
+    color: gray;
 }
 
 .info__bar button {
